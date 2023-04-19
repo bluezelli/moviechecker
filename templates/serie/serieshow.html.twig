@@ -3,43 +3,46 @@
 {% block title %}Hello SerieController!{% endblock %}
 
 {% block body %}
-<style>
-    .example-wrapper { margin: 1em auto; max-width: 800px; width: 95%; font: 18px/1.5 sans-serif; }
-    .example-wrapper code { background: #F5F5F5; padding: 2px 6px; }
-</style>
 
 
     <div class="container">
         <div class="row">
             <div class="col">
-               <table class="table">
+                <table class="table">
                     <thead>
                     <tr>
-                        <th scope="col">number</th>
                         <th scope="col">title</th>
+                        <th scope="col">description</th>
+                        <th scope="col">year</th>
+                        <th scope="col"></th>
                     </tr>
-
                     </thead>
                     <tbody>
-                    {% for genre in genres %}
+                    {% for serie in series %}
                     <tr>
                         <td>
-                            {{ genre.id }}
-
+                            {{ serie.title }}
                         </td>
                         <td>
-                            {{ genre.name }}
+                            {{ serie.description }}
                         </td>
                         <td>
-{#                            <a class="btn btn-warning" href="{{ path('serieshower',{id: genre.id}) }}">Go</a>#}
+                            {{ serie.year }}
+                        </td>
+                        <td>
+                            <a class="btn btn-warning" href="{{ path('episode', {{ id: serie.id }}) }}">show episode</a>
                         </td>
                     </tr>
-
                     {% endfor %}
                     </tbody>
-               </table>
+                </table>
             </div>
-{#            <a class="btn btn-dark" href="{{ path('insert') }}"></a>#}
+            <a class="btn btn-warning" href="{{ path('home') }}">back home</a>
         </div>
     </div>
+
+
+
+
+
 {% endblock %}

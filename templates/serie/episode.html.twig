@@ -1,0 +1,36 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Hello SerieController!{% endblock %}
+
+
+{% block body %}
+
+<div class="container">
+    <div class="row">
+        <div class="col">
+            <table class="table">
+                <thead>
+                <tr>
+                    <th scope="col">number</th>
+                    <th scope="col">season</th>
+                    <th scope="col">part</th>
+                </tr>
+                </thead>
+                <tbody>
+                {% for episodes in episode %}
+                    <tr>
+                        <td> {{ episodes.id }}</td>
+                        <td> {{ episodes.season }}</td>
+                        <td>{{ episodes.part }}</td>
+                    </tr>
+                {% endfor %}
+                </tbody>
+            </table>
+        </div>
+    </div>
+</div>
+
+
+
+
+{% endblock %}
